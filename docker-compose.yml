@@ -1,0 +1,15 @@
+services:
+  pgsql:
+    image: postgres:17-alpine
+    container_name: mantenimiento_db
+    ports:
+      - "5437:5432"
+    environment:
+      POSTGRES_DB: mantenimiento_vehicular
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mantenimiento123
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
